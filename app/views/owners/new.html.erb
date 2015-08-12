@@ -1,0 +1,12 @@
+<h1>New director and beneficial owner</h1>
+
+<%= render 'form' %>
+
+<script>
+	var url = window.location,
+		urlString = url.toString();
+		companyId = urlString.split( '?' )[1],
+		option = '#owner_company_id option[value="'+companyId+'"]';
+	
+	$(option).attr("selected",true);
+</script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Companies</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header>
+	<div class="title">Ruby App by Cristhian Santana</div>
+</header>
+<nav class="main-menu">
+  <ul>
+    <li><%= link_to "Companies",  :companies %></li>
+    <li><%= link_to "Owners",   :owners %></li>
+  </ul>
+</nav>
+<div class="main-content">
+	<%= yield %>
+</div>
+
+
+</body>
+</html>

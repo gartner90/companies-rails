@@ -1,0 +1,41 @@
+<%= link_to image_tag("edit.png"), edit_company_path(@company), class: 'float-right' %>
+
+<p id="notice"><%= notice %></p>
+
+<h1> <%= @company.nameCo %></h1>
+
+<div class="details">
+  <p>
+    <strong>Address:</strong>
+    <%= @company.address %>
+  </p>
+
+  <p>
+    <strong>City:</strong>
+    <%= @company.city %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= @company.email %>
+  </p>
+
+  <p>
+    <strong>Phone:</strong>
+    <%= @company.phone %>
+  </p>
+</div>
+<label>  Directors and beneficial owners</label>
+
+<% @company.owner.each do |owner| %>
+<div class="owner">
+  <b><%= owner.nameOw %></b> <br>
+  <%= link_to image_tag("delete.png", width: '20'), owner, method: :delete, class: 'float-right' %> 
+  <%= link_to 'Link File', owner.file.url, target: :_blank, class: 'link-file' %>
+</div>
+<% end %>
+
+<a href="/owners/new/?<%= @company.id %>"><%=image_tag("add.png")%> Add Owner</a>
+<br>
+
+

@@ -1,0 +1,16 @@
+<%= link_to image_tag("edit.png"), edit_owner_path(@owner), class: 'float-right' %>
+
+<p id="notice"><%= notice %></p>
+
+<h1><%= @owner.nameOw %></h1>
+<div class="details">
+	<p>
+	  <strong>File:</strong>
+	  <%= link_to 'Link', @owner.file.url, target: :_blank, class: 'link-file' %>
+	</p>
+
+	<p>
+	  <strong>Company:</strong>
+	  <%= @owner.company.nameCo %>
+	</p>
+</div>
